@@ -1,0 +1,3 @@
+insert into lecture (content, created_dt, end_dt, last_modified_dt, lecture_hall, number_of_recruits, speaker, start_dt) values ("밀레니얼,청년투표의해법을묻다", now(), "2023-04-16T16:00", now(), "A Hall", 40, "강창진", "2023-04-16T14:00");
+insert into lecture (content, created_dt, end_dt, last_modified_dt, lecture_hall, number_of_recruits, speaker, start_dt) values ("내가만화를그리는이유", now(), "2023-04-16T15:00", now(), "B Hall", 30, "이종범", "2023-04-16T13:00");
+insert into lecture (content, created_dt, end_dt, last_modified_dt, lecture_hall, number_of_recruits, speaker, start_dt) values ("당신의 선택이 쉬워지는 3가지 꿀팁!", now(), "2023-04-16T19:00", now(), "B Hall", 20, "김점옥", "2023-04-16T16:00");
