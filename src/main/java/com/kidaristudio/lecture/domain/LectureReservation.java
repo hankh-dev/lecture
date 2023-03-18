@@ -35,8 +35,5 @@ public class LectureReservation {
     public LectureReservation() {
     }
 
-    public LectureReservation(String employeeId) {
-        this.employeeId = employeeId;
-    }
 
 }

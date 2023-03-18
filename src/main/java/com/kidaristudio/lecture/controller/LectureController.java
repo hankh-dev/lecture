@@ -44,11 +44,14 @@ public class LectureController {
 //        return ResponseEntity.ok(lectures);
 //    }
 //
-//    @GetMapping("/{lectureId}")
-//    public ResponseEntity<Lecture> getLectureById(@PathVariable Long lectureId) {
-//        Lecture lecture = lectureService.getLectureById(lectureId);
-//        return ResponseEntity.ok(lecture);
-//    }
+
+    @GetMapping("/{lectureId}")
+    public ResponseEntity<Lecture> getLectureById(@PathVariable Integer lectureId) {
+        System.out.println("fefefef");
+
+        Lecture lecture = lectureService.getLectureById(lectureId);
+        return ResponseEntity.ok(lecture);
+    }
 
     // other methods for updating and deleting lectures
 }

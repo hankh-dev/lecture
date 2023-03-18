@@ -10,11 +10,6 @@ import javax.persistence.LockModeType;
 public interface LectureReservationRepository extends JpaRepository<Lecture, Integer> {
 
     @Lock(value = LockModeType.PESSIMISTIC_WRITE)
-    @Query("select l from Lecture l where l.id = :id")
-    Lecture findByIdWithPessimisticLock(Integer id);
-
-
-    @Lock(value = LockModeType.OPTIMISTIC)
-    @Query("select l from Lecture l where l.id = :id")
-    Lecture findByIdWithOptimisticLock(Integer id);
+    @Query("select l from LectureReservation l where l.employeeId = :employeeId and l.lecture = :lectureId")
+    Lecture findByEmployeeIdAndLectureIdWithPessimisticLock(Integer employeeId, Integer lectureId);
 }

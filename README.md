@@ -11,4 +11,4 @@
   - validation check
   - @CreatedDate null
   - @ColumnPosition
-  - api 버전관리
+  - api 버전관리, api 분리

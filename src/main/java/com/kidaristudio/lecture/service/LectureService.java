@@ -33,8 +33,8 @@ public class LectureService {
     }
 
     public Lecture getLectureById(Integer lectureId) {
+        System.out.println("qwqwqw");
         return lectureRepository.findById(lectureId)
                 .orElseThrow(() -> new EntityNotFoundException("Lecture not found"));
     }
-
 }
