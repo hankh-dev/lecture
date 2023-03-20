@@ -11,4 +11,6 @@
 == My Api Docs
 API 명세서 index.html이다.
 
-include::src/docs/asciidoc/lecture-detail.adoc[]
+include::src/docs/asciidoc/getAllLectures.adoc[]
+include::src/docs/asciidoc/createLecture.adoc[]
+include::src/docs/asciidoc/getLectureById.adoc[]

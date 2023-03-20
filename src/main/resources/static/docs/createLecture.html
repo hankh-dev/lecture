@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.10">
-<title>강연 조회 API</title>
+<title>강연 등록 API</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -441,17 +441,28 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div id="content">
 <div class="sect1">
-<h2 id="_강연_조회_api">강연 조회 API</h2>
+<h2 id="_강연_등록_api">강연 등록 API</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>강연 정보를 조회합니다.</p>
+<p>강연정보를 등록합니다.</p>
 </div>
 <div class="sect5">
 <h6 id="_요청_형식">요청 형식</h6>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight nowrap"><code class="language-http" data-lang="http">GET /lectures/1 HTTP/1.1
-Host: localhost:8080</code></pre>
+<pre class="highlight nowrap"><code class="language-http" data-lang="http">POST /lectures HTTP/1.1
+Content-Type: application/json;charset=UTF-8
+Content-Length: 213
+Host: localhost:8080
+
+{
+  "speaker" : "정은비,노도일",
+  "lectureHall" : "A",
+  "numberOfRecruits" : 35,
+  "content" : "행복플러스멋진인생",
+  "startDt" : "2023-04-16T16:00:00",
+  "endDt" : "2023-04-16T19:00:00"
+}</code></pre>
 </div>
 </div>
 </div>
@@ -461,18 +472,18 @@ Host: localhost:8080</code></pre>
 <div class="content">
 <pre class="highlight nowrap"><code class="language-http" data-lang="http">HTTP/1.1 200 OK
 Content-Type: application/json
-Content-Length: 322
+Content-Length: 277
 
 {
-  "id" : 1,
-  "speaker" : "강창진",
-  "lectureHall" : "A Hall",
-  "numberOfRecruits" : 40,
-  "content" : "밀레니얼,청년투표의해법을묻다",
-  "startDt" : "2023-04-16T14:00:00",
-  "endDt" : "2023-04-16T16:00:00",
-  "createdDt" : "2023-03-19T11:27:22",
-  "lastModifiedDt" : "2023-03-19T11:27:22"
+  "id" : 4,
+  "speaker" : "정은비,노도일",
+  "lectureHall" : "A",
+  "numberOfRecruits" : 35,
+  "content" : "행복플러스멋진인생",
+  "startDt" : "2023-04-16T16:00:00",
+  "endDt" : "2023-04-16T19:00:00",
+  "createdDt" : null,
+  "lastModifiedDt" : null
 }</code></pre>
 </div>
 </div>
@@ -481,7 +492,16 @@ Content-Length: 322
 <h6 id="_try_with_curl">Try with curl</h6>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'http://localhost:8080/lectures/1' -i -X GET</code></pre>
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl 'http://localhost:8080/lectures' -i -X POST \
+    -H 'Content-Type: application/json;charset=UTF-8' \
+    -d '{
+  "speaker" : "정은비,노도일",
+  "lectureHall" : "A",
+  "numberOfRecruits" : 35,
+  "content" : "행복플러스멋진인생",
+  "startDt" : "2023-04-16T16:00:00",
+  "endDt" : "2023-04-16T19:00:00"
+}'</code></pre>
 </div>
 </div>
 </div>
@@ -489,7 +509,15 @@ Content-Length: 322
 <h6 id="_try_with_httpie">Try with httpie</h6>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-bash" data-lang="bash">$ http GET 'http://localhost:8080/lectures/1'</code></pre>
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ echo '{
+  "speaker" : "정은비,노도일",
+  "lectureHall" : "A",
+  "numberOfRecruits" : 35,
+  "content" : "행복플러스멋진인생",
+  "startDt" : "2023-04-16T16:00:00",
+  "endDt" : "2023-04-16T19:00:00"
+}' | http POST 'http://localhost:8080/lectures' \
+    'Content-Type:application/json;charset=UTF-8'</code></pre>
 </div>
 </div>
 </div>
@@ -499,7 +527,7 @@ Content-Length: 322
 <div id="footer">
 <div id="footer-text">
 Version 0.0.1-SNAPSHOT<br>
-Last updated 2023-03-19 20:26:13 +0900
+Last updated 2023-03-20 17:16:28 +0900
 </div>
 </div>
 </body>

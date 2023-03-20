@@ -1,0 +1,11 @@
+== 강연 등록 API
+강연정보를 등록합니다.
+
+====== 요청 형식
+include::{snippets}/lectures/createLecture/http-request.adoc[]
+====== 응답 형식
+include::{snippets}/lectures/createLecture/http-response.adoc[]
+====== Try with curl
+include::{snippets}/lectures/createLecture/curl-request.adoc[]
+====== Try with httpie
+include::{snippets}/lectures/createLecture/httpie-request.adoc[]

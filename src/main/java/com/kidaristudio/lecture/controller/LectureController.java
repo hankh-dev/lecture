@@ -37,14 +37,6 @@ public class LectureController {
     }
 
 
-//
-//    @GetMapping
-//    public ResponseEntity<List<Lecture>> getAllLectures() {
-//        List<Lecture> lectures = lectureService.getAllLectures();
-//        return ResponseEntity.ok(lectures);
-//    }
-//
-
     @GetMapping("/{lectureId}")
     public ResponseEntity<Lecture> getLectureById(@PathVariable Integer lectureId) {
         System.out.println("fefefef");

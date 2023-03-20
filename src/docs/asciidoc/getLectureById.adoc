@@ -1,5 +1,5 @@
-== 강연 조회 API
-강연 정보를 조회합니다.
+== 강연 상세 조회 API
+강연 상세 정보를 조회합니다.
 
 ====== 요청 형식
 include::{snippets}/lectures/getLectureById/http-request.adoc[]

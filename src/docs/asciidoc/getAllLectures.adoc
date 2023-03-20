@@ -1,0 +1,11 @@
+== 강연 목록 조회 API
+강연 목록을 조회합니다.
+
+====== 요청 형식
+include::{snippets}/lectures/getAllLectures/http-request.adoc[]
+====== 응답 형식
+include::{snippets}/lectures/getAllLectures/http-response.adoc[]
+====== Try with curl
+include::{snippets}/lectures/getAllLectures/curl-request.adoc[]
+====== Try with httpie
+include::{snippets}/lectures/getAllLectures/httpie-request.adoc[]

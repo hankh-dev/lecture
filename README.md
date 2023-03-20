@@ -5,10 +5,13 @@
 - RDBMS : Mysql 8
 - 데이타 설계
   - ![erd.png](erd.png)
-- 그 밖에 고민했거나 설명하고 싶은 부분
-  - 고정되있지는 않다.
+- 완료된일
+  - BackOffice
+    - 강연 목록(전체 강연 목록)
+    - 강연 등록(강연자, 강연장, 신청인원, 강연시간, 강연내용 입력)
 - 해야될일
   - validation check
-  - @CreatedDate null
+  - @CreatedDate, @LastModifiedDate null입력됨
   - @ColumnPosition
   - api 버전관리, api 분리
+  - 기타 API 개발
